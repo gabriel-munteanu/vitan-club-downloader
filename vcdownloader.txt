@@ -1,0 +1,27 @@
+VitanClub Downloader
+
+*V0.4
+-Am reparat un bug intern ce putea aparea la descarcarea de pe orice host
+-Meniul de descarcare a unei melodii poate fi deschis si cu 2x click stanga sau enter(dupa selectare)
+-Am adaugat un host nou de descarcare
+-Melodiile descarcare pot fi adaugate in Winamp din meniul afisat la click dreapta
+
+*V0.3
+-Toate hosturile sunt din nou functionale
+-Verificare la descarcarea unei melodii daca e deja in lista de download deja
+
+*V0.2
+-Verificare la pornire daca e acces la internet
+-Verificare daca site-ul VitanClub.net este online
+-Verificare daca a aparut o noua versiune a programului
+-Corectarea codului pentru oprirea descarcariilor
+-Adaugarea a 2 hosturi de descarcare alternative
+-Repararea unor bug-uri interne
+
+*V0.1
+-Lista cu melodii pentru fiecare tip de muzica
+-La click dreapta pe melodie: Descarca & Deschide pagina download
+-Posibilitate de oprire download si repornire download
+-Dupa descarcare apare optiunea de a arata in folder fisierul descarcat
+-Din meniu poate fi schimbat folderul de download
+-Limita maxima de descarcari simultane e 5

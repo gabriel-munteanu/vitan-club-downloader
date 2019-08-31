@@ -1,0 +1,12 @@
+TO DO
+
+-Verificare conexiune internet :D
+-Corectez oprirea download-ului :D
+-Adaug verificarea versiunii :D
+-Adaug alta sursa de download :D
+-Sa bag mai multe verificari in procesul de descarcare sa nu mai crape :D
+-Adaug otiunea sa marcheze melodiile noi
+-Player
+-Auto check de melodii noi cu posibila descarcare
+        filtrarea melodiilor(descarcarea automata a melodiilor de la un artist)
+-Cautare(in baza de date proprie sau direct pe site cu raspuns generat de script)

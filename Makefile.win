@@ -1,0 +1,55 @@
+# Project: VCD
+# Compiler: Default GCC compiler
+# Compiler Type: MingW 3
+# Makefile created by wxDev-C++ IDE 7.4.2.569 on 26.12.12 02:52
+
+WXLIBNAME = wxmsw29u
+CPP       = g++.exe
+CC        = gcc.exe
+WINDRES   = "windres.exe"
+OBJ       = Objects/MingW/VCDApp.o Objects/MingW/Downloader.o Objects/MingW/VCDFrm.o Objects/MingW/DownloadThread.o Objects/MingW/AboutDlg.o Objects/MingW/VCD_private.res
+LINKOBJ   = "Objects/MingW/VCDApp.o" "Objects/MingW/Downloader.o" "Objects/MingW/VCDFrm.o" "Objects/MingW/DownloadThread.o" "Objects/MingW/AboutDlg.o" Objects/MingW/VCD_private.res
+LIBS      = -L"C:/Program Files (x86)/Dev-Cpp/lib/wx/gcc_lib" -L"C:/Program Files (x86)/Dev-Cpp/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -mwindows -l$(WXLIBNAME) -l$(WXLIBNAME)_gl -lwxtiff -lwxjpeg -lwxpng -lwxzlib -lwxregexu -lwxexpat -lkernel32 -luser32 -lcurl  -lz -lws2_32 -lwldap32 -lwinmm -lgdi32 -lgdiplus  -lcomdlg32 -lwinspool -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32 -lodbc32 -lopengl32   -lgmon -pg  -g3 
+INCS      = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
+CXXINCS   = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/" -I"C:/Program Files (x86)/Dev-Cpp/include/common"
+RCINCS    = --include-dir "C:/PROGRA~2/Dev-Cpp/include/common"
+BIN       = Output/MingW/VCD.exe
+DEFINES   = -D__WXMSW__ -D__GNUWIN32__ -D__UNICODE__
+CXXFLAGS  = $(CXXINCS) $(DEFINES) -DCURL_STATICLIB -static   -fexceptions -pg -g3
+CFLAGS    = $(INCS) $(DEFINES) -lrtmp -lidn -lssl -lssh2 -lcrypto     -fexceptions -pg -g3
+GPROF     = gprof.exe
+ifeq ($(OS),Windows_NT)
+   RM = del /Q
+   FixPath = $(subst /,\,$1)
+else
+   RM = rm -f
+   FixPath = $1
+endif
+LINK      = g++.exe
+
+.PHONY: all all-before all-after clean clean-custom
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	$(RM) $(call FixPath,$(LINKOBJ)) "$(call FixPath,$(BIN))"
+
+$(BIN): $(OBJ)
+	$(LINK) $(LINKOBJ) -o "$(BIN)" $(LIBS) 
+
+Objects/MingW/VCDApp.o: $(GLOBALDEPS) VCDApp.cpp VCDApp.h VCDFrm.h Def.h DownloadThread.h Downloader.h Def.h Downloader.h
+	$(CPP) -c VCDApp.cpp -o Objects/MingW/VCDApp.o $(CXXFLAGS)
+
+Objects/MingW/Downloader.o: $(GLOBALDEPS) Downloader.cpp Downloader.h
+	$(CPP) -c Downloader.cpp -o Objects/MingW/Downloader.o $(CXXFLAGS)
+
+Objects/MingW/VCDFrm.o: $(GLOBALDEPS) VCDFrm.cpp VCDFrm.h Def.h DownloadThread.h Downloader.h Def.h Downloader.h AboutDlg.h
+	$(CPP) -c VCDFrm.cpp -o Objects/MingW/VCDFrm.o $(CXXFLAGS)
+
+Objects/MingW/DownloadThread.o: $(GLOBALDEPS) DownloadThread.cpp DownloadThread.h Downloader.h Def.h
+	$(CPP) -c DownloadThread.cpp -o Objects/MingW/DownloadThread.o $(CXXFLAGS)
+
+Objects/MingW/AboutDlg.o: $(GLOBALDEPS) AboutDlg.cpp AboutDlg.h
+	$(CPP) -c AboutDlg.cpp -o Objects/MingW/AboutDlg.o $(CXXFLAGS)
+
+Objects/MingW/VCD_private.res: Objects/MingW/VCD_private.rc VCDApp.rc 
+	$(WINDRES) --input-format=rc -o Objects/MingW/VCD_private.res $(RCINCS) Objects/MingW/VCD_private.rc -O coff
